@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Precompiled.cpp" />
+    <ClCompile Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Private\2D\Shader.cpp">
+      <Filter>Private\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Private\2D\Vertex.cpp">
+      <Filter>Private\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Private\3D\PerspectiveTest.cpp">
+      <Filter>Private\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Private\3D\Shader.cpp">
+      <Filter>Private\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Private\3D\Vertex.cpp">
+      <Filter>Private\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Private\Windows\WindowsGDI.cpp">
+      <Filter>Private\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Private\Windows\WindowsRSI.cpp">
+      <Filter>Private\Windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Precompiled.h" />
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Public\2D\Shader.h">
+      <Filter>Public\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Public\2D\Vertex.h">
+      <Filter>Public\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Public\3D\PerspectiveTest.h">
+      <Filter>Public\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Public\3D\Shader.h">
+      <Filter>Public\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Public\3D\Vertex.h">
+      <Filter>Public\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Public\RendererHeaders.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Public\RendererInterface.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Public\Windows\WindowsGDI.h">
+      <Filter>Public\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-11-1\Source\Runtime\Renderer\Public\Windows\WindowsRSI.h">
+      <Filter>Public\Windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Private">
+      <UniqueIdentifier>{8C2AB306-016D-3517-B4AD-6C9EC4F82F2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\2D">
+      <UniqueIdentifier>{20C0099C-AD7C-377D-B22A-0981F0DD45F5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\3D">
+      <UniqueIdentifier>{D82C4C6D-8C7F-39DE-BD64-E2D452807EE1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Windows">
+      <UniqueIdentifier>{A7FA8B33-A0CA-3211-86BF-74A8E31F5EAF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{BB5A03AF-5677-3A27-A5AB-FACC02E21979}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\2D">
+      <UniqueIdentifier>{1ECD1BFD-92E6-36A7-9B93-DDDEEA31B6C5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\3D">
+      <UniqueIdentifier>{3A6408C1-A0F6-30BB-9590-48D665087402}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Windows">
+      <UniqueIdentifier>{457561E7-C0D2-3BFD-BB8F-BD0028E10682}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

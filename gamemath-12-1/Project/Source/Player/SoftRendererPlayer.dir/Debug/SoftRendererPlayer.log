@@ -1,0 +1,9 @@
+﻿  Precompiled.cpp
+  SystemInputManager.cpp
+  WindowsApp.cpp
+  SoftRenderer.cpp
+  SoftRenderer2D.cpp
+  SoftRenderer3D.cpp
+  코드를 생성하고 있습니다...
+SoftRenderer3D.obj : error LNK2019: "public: struct CK::Matrix4x4 __cdecl CK::DDD::CameraObject::GetPerspectiveMatrix(void)const " (?GetPerspectiveMatrix@CameraObject@DDD@CK@@QEBA?AUMatrix4x4@3@XZ)"private: void __cdecl SoftRenderer::Render3D(void)" (?Render3D@SoftRenderer@@AEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+C:\Users\Heetae\source\repos\Learning_GameMath\gamemath-12-1\Output\Windows\Binary\Debug\SoftRendererPlayer.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
