@@ -40,7 +40,7 @@ FORCEINLINE constexpr BoundCheckResult Frustum::CheckBound(const Vector3& InPoin
 
 	return BoundCheckResult::Inside;
 }
-
+#if 0 // 원본
 FORCEINLINE constexpr BoundCheckResult Frustum::CheckBound(const Sphere& InSphere) const
 {
 	for (const auto& p : Planes)
@@ -58,6 +58,7 @@ FORCEINLINE constexpr BoundCheckResult Frustum::CheckBound(const Sphere& InSpher
 
 	return BoundCheckResult::Inside;
 }
+#endif // 원본
 
 FORCEINLINE constexpr BoundCheckResult Frustum::CheckBound(const Box& InBox) const
 {
@@ -99,4 +100,101 @@ FORCEINLINE constexpr bool Frustum::IsIntersect(const Box& InBox) const
 	return false;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if 1 // 공부
+FORCEINLINE constexpr BoundCheckResult Frustum::CheckBound(const Sphere& InSphere) const
+{
+	for (const Plane& p : Planes)
+	{
+		if (p.Distance(InSphere.Center) > InSphere.Radius)
+		{
+			return BoundCheckResult::Outside;
+		}
+		else if (Math::Abs(p.Distance(InSphere.Center)) <= InSphere.Radius)
+		{
+			return BoundCheckResult::Intersect;
+		}
+	}
+
+	return BoundCheckResult::Inside;
+}
+
+#endif // 공부
 }

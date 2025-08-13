@@ -157,6 +157,9 @@ void SoftRenderer::Render3D()
 	size_t totalObjects = g.GetScene().size();
 	size_t culledObjects = 0;
 	size_t renderedObjects = 0;
+#ifdef EX_13_4
+	size_t intersectedObjects = 0;
+#endif
 
 	for (auto it = g.SceneBegin(); it != g.SceneEnd(); ++it)
 	{
@@ -169,7 +172,47 @@ void SoftRenderer::Render3D()
 		// 렌더링에 필요한 게임 오브젝트의 주요 레퍼런스를 얻기
 		const Mesh& mesh = g.GetMesh(gameObject.GetMeshKey());
 		const TransformComponent& transform = gameObject.GetTransform();
+#ifdef EX_13_4
+		Matrix4x4 srtMatrix = transform.GetModelingMatrix();
 
+		LinearColor finalColor = gameObject.GetColor();
+
+		// 바운딩 영역의 크기를 트랜스폼에 맞게 조정
+		Sphere sphereBound = mesh.GetSphereBound();
+		sphereBound.Radius *= transform.GetScale().Max();
+		sphereBound.Center = (vMatrix * srtMatrix * Vector4(sphereBound.Center)).ToVector3();
+
+		// 영역을 사용해 절두체 컬링을 구현
+		BoundCheckResult checkResult = frustumFromMatrix.CheckBound(sphereBound);
+		if (checkResult == BoundCheckResult::Outside)
+		{
+			culledObjects++;
+			continue;
+		}
+		else if (checkResult == BoundCheckResult::Intersect)
+		{
+			intersectedObjects++;
+			finalColor = LinearColor::Red; // ※ Intersected 인 오브젝트는, 빨간색으로 화면에 표시
+		}
+
+		// 메시의 정점들 pv 로 최종 행렬 계산
+		Matrix4x4 finalMatrix = pvMatrix * srtMatrix;
+
+		// 메시 그리기
+		DrawMesh3D(mesh, finalMatrix, finalColor);
+
+		// 그린 물체를 통계에 포함
+		renderedObjects++;
+	}
+
+	r.PushStatisticText("Total GAmeObject : " + std::to_string(totalObjects));
+	r.PushStatisticText("Culled GameObjects : " + std::to_string(culledObjects));
+	r.PushStatisticText("Intersected GameObjects : " + std::to_string(intersectedObjects));
+	r.PushStatisticText("Rendered GameObjects : " + std::to_string(renderedObjects));
+#else
+
+	for (auto it = g.SceneBegin(); it != g.SceneEnd(); ++it)
+	{
 		// 절두체 컬링 구현
 		Vector4 viewPos = vMatrix * Vector4(transform.GetPosition());
 		if (frustumFromMatrix.CheckBound(viewPos.ToVector3()) == BoundCheckResult::Outside)
@@ -192,6 +235,7 @@ void SoftRenderer::Render3D()
 	r.PushStatisticText("Total GameObjects : " + std::to_string(totalObjects));
 	r.PushStatisticText("Culled GameObjects : " + std::to_string(culledObjects));
 	r.PushStatisticText("Rendered GameObjects : " + std::to_string(renderedObjects));
+#endif
 }
 
 // 메시를 그리는 함수

@@ -484,7 +484,7 @@
 	   ( n^ 이 아닌, n (정규화되지 않은) 이 Vector4 의 0, 1, 2 에, D (정규하되지 않은 n 과 P0의 내적값) 가 Vector4 의 3 으로,
 	   Vector4 를 인자로 받는 Plane(const4& InVector4) 을 받았을 때, 
 	   위 두 함수로, 정규화된 n^ 과 정규화된? D 로 변환하는 함수 공부 ( 교재 p 455, 456 의 내용 )
-	 - MathModule - Public - Frustum.h 의 CheckBound(const Vector3& InPoint) 함수 공부
+	 - MathMoodule - Public - Frustum.h 의 CheckBound(const Vector3& InPoint) 함수 공부
 */
 //#define EX_13_1
 /*	■ EX_13_1
@@ -507,14 +507,64 @@
 
 /************************************************************
 					 SoftRenderer 13-3 sln 사용
-					EX_13_4 __ 
 *************************************************************/
-/*	■ 내부 코드 공부
+/*	■ 내부 코드 공부 (구바운딩 컬링)
 	 - MathModule - Public - Sphere.h 의 IsInside, Intersect 함수 공부
 	 - MathModule - Private - Sphere.cpp 의 Sphere 생성자 함수 공부
+	 - EngineModule - Public - GameEngine.h 의 LoadResources 함수에서, Sphere 생성자 함수를 호출함을 확인 
+	 - MathModule - Public - Frustum.h 의 CheckBound(const Sphere& InSphere) 함수 공부
 */
 
 //#define EX_13_4
 /*	■ EX_13_4
-	 - 
+	 - 구바운딩 컬링을 구현한 코드
+	 - V * (TRS) * v 인 뷰공간에서의 구바운딩 컬링
+*/
+
+
+
+
+
+
+
+
+/************************************************************
+					 SoftRenderer 13-4 sln 사용
+*************************************************************/
+//#define EX_13_5
+/*	■ EX_13_5
+	 - 구바운딩 컬링을 구현한 코드
+	 - v (로컬공간) 에서 (P V (TRS)) 로 절두체를 만들어 판정식을 사용하여 컬링하는 코드
+*/
+
+
+/*	■ 내부 코드 공부 (AABB 판정 컬링)
+	 - MathModule - Public - Box.h 의 operator += 함수 공부
+	 - MathModule - Private - Box.cpp 의 Box::Bix(const std::vector<Vector3> InVertices) 함수 공부
+	 - MathModule - Public - Frustum.h 의 CheckBound(const Box& InBox) const 함수 공부
+*/
+//#define EX_13_6
+/*	■ EX_13_6
+	 - AABB 판정 컬링 코드
+	 - 지역공간 에서의 절두체 판정. PV > 0 에서 P = ( P V (TRS) )
+*/
+
+
+
+
+
+
+
+
+/************************************************************
+					 SoftRenderer 13-6 sln 사용
+*************************************************************/
+/*	■ 내부 코드 공부 (삼각형 클리핑)
+	 - RenderModule - Public - 3D - PerspectiveText.h 의 코드 전체 공부 (개념적으로 중요하니, 모두 손코딩)
+*/
+#define EX_13_7
+/*	■ EX_13_7
+	 - 위 내부코드 공부 (삼각형 클리핑) 을 기반으로 실습하는 코드
+	 - 기존 교재 내용과 다름 (불필요한 부분 삭제)
+	 - 스페이스바를 눌러서, 클리핑 사용 유무를 설정. 삼각형 클리핑 효과를 구분
 */
