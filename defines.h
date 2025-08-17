@@ -562,9 +562,117 @@
 /*	■ 내부 코드 공부 (삼각형 클리핑)
 	 - RenderModule - Public - 3D - PerspectiveText.h 의 코드 전체 공부 (개념적으로 중요하니, 모두 손코딩)
 */
-#define EX_13_7
+//#define EX_13_7
 /*	■ EX_13_7
 	 - 위 내부코드 공부 (삼각형 클리핑) 을 기반으로 실습하는 코드
 	 - 기존 교재 내용과 다름 (불필요한 부분 삭제)
 	 - 스페이스바를 눌러서, 클리핑 사용 유무를 설정. 삼각형 클리핑 효과를 구분
+*/
+
+
+
+
+
+
+/************************************************************
+					 SoftRenderer 16-1 sln 사용
+*************************************************************/
+/*	■ 내부 코드 공부 (쿼터니언)
+	 - MathModule - Public - Quaternion.h 의 필드멤버 X Y Z W 확인, RotateVector 함수, operator* 함수, 
+	   FromRotator 함수, ToRotator 함수, FromMatrix 함수, Slerp 함수 공부
+	 - EngineModule - Public - 3D - TransformComponent.h 의
+	   1) 필드멤버로 Quaternion _Rotation 을 갖고 있음을 확인
+	   2) Quaternion.h 의 공부했던 함수들을 TransformComponent 에서 호출함을 확인
+	   3) GetLocalX, Y, Z 함수 공부
+	   4) GetModelingMatrix 함수 공부
+*/
+//#define EX_16_11
+/*	■ EX_16_11
+*/
+
+
+
+
+
+
+
+
+
+
+
+/************************************************************
+					 SoftRenderer 17-1 sln 사용
+*************************************************************/
+/*	■ 내부 코드 공부 (마지막장)
+	 - EngineModule - Public - 3D - Bone.h 의 코드들 훑어보기
+	 - EngineModule - Public - 3D - Mesh.h 에서, struct Weight 코드 공부
+*/
+//#define EX_17_BASE
+/*
+	- EngineModule - Public - 3D - GAmeEngine.cpp 의 LoadResources 의 일부 코드 공부 (메시 데이터 생성 코드)
+	- SoftRenderer3D.cpp 의 LoateUpdate (본 움직이는 코드) 공부
+*/
+//#define EX_17_1
+/*
+	- EX_17_BASE 와 연계
+	- Mesh 에 Bone 을 갖고 있는 구조로, LateUpdate 에서 본 이동 처리. DrawMesh3D에서 이동한 본에 따라 정점을 이동
+	- 실전에는 P V (TRS) 전인 지역공간에서 애니매이션 본 이동 처리. 코드는 기본적인 애니매이션 동작 설명 코드
+*/
+
+
+
+
+
+
+
+
+
+
+
+/************************************************************
+					 SoftRenderer 17-2 sln 사용
+*************************************************************/
+/*	■ 내부 코드 공부
+	 - EngineModule - Public - 3D - TransformComponent.h 의 
+	 1) SetRoot, GetRoot, SetParent, GetChildren, ChildBegin, ChildEnd 함수가 있다는 것만 공부 (함수 자체는 공부 안함),
+	 2) private : 에 _ParentPtr, _ChildPtr 이 있는 것 확인
+	 3) GetLocalTransform, SetLocalTransform, GetWorldTransform, SetWorldTransform 있다는 것만 공부 (함수공부안함)
+	 4) private : 에 _LocalTransform, _WorldTransform 이 있는 것 확인
+	
+	 - MathModule - Public - Transform.h 의 LocalToWorld, Inverse, WorldToLocal 함수 공부
+
+	 - EngineModule - Private - 3D - TransformComponent.cpp 의 
+	   UpdateLocal, UpdateWorld, UpdateChildrenWorld 함수 공부
+
+	 - Transform.Component.h 의 다수의 함수에, UpdateWorld, UpdateLocal 함수 호출 확인
+*/
+//#define EX_17_2
+/*
+	- 위 내부코드 공부와 연계
+	- 부모 자식관계에서의 WorldPosition, LocalPosition 에 대해 공부하는 코드
+*/
+
+
+
+
+
+
+
+
+
+
+/************************************************************
+					 SoftRenderer 17-3 sln 사용
+*************************************************************/
+/*	■ 내부 코드 공부
+	 - Bone.h 의 SetParent, HasParent, GetParentName 함수 공부
+	 - EngineModule - Private - 3D - GameEngine.cpp 의 LoadResources 함수 공부 ( 본 생성작업 )
+*/
+#define EX_17_3
+/*
+	- 위 내부코드 공부와 연계
+	- 17-1 의 정점의 본 위치 적용과, 17-2 의 본의 부모자식 관계를 통한 스켈레탈 애니매이션 기능을 종합하여,
+	  최종적인 결과 도출
+	- 17-1 과의 차이점으로, 정점의 애니매이션 위치 계산을 (SRT)a * (SRT)b(^-1) * v ( 공부 노트 참조) 기반으로
+	  도출
 */
