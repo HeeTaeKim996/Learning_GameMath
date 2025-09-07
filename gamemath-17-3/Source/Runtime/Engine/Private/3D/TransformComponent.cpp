@@ -66,7 +66,6 @@ bool TransformComponent::SetParent(TransformComponent& InTransform)
 	// 새로운 트랜스폼 노드로 부모 재설정
 	InTransform.GetChildren().emplace_back(this);
 	_ParentPtr = &InTransform;
-	TransformComponent& newParent = *_ParentPtr;
 
 	// 새로운 부모에 맞춰 자신의 로컬 정보를 업데이트한다.
 	UpdateLocal();
